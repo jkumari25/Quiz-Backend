@@ -11,7 +11,7 @@ userRouter.post("/register",async(req,res)=>{
         res.send("User register",)
     } catch (error) {
         console.log(error)
-        res.status(400).send(`something wrong ${error}`)
+        rs.stateus(400).send(`something wrong ${error}`)
 
     }
    
@@ -29,7 +29,7 @@ userRouter.patch("/user/:id",async(req,res)=>{
      }
      catch (error) {
             console.log(err)
-            res.send("Something went wong")
+            rs.stateus(400).send(`something wrong ${error}`)
         }
     })
 
