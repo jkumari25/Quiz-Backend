@@ -11,12 +11,22 @@ userRouter.post("/register",async(req,res)=>{
         res.send("User register",)
     } catch (error) {
         console.log(error)
-        rs.stateus(400).send(`something wrong ${error}`)
+        res.status(400).send(`something wrong ${error}`)
 
     }
    
 })
 
+userRouter.get("/", async(req,res)=>{
+    try {
+        const user= await UserModel.find()
+        res.send(user) 
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(`something wrong ${error}`)  
+    }
+    
+})
 
 
 
@@ -29,7 +39,7 @@ userRouter.patch("/user/:id",async(req,res)=>{
      }
      catch (error) {
             console.log(err)
-            rs.stateus(400).send(`something wrong ${error}`)
+            res.status(400).send(`something wrong ${error}`)
         }
     })
 
