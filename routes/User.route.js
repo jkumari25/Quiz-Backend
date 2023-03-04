@@ -8,7 +8,7 @@ userRouter.post("/register",async(req,res)=>{
     try {
          const user=new UserModel({name,email,phone,score})
         await user.save()
-        res.send("User register",)
+        res.send(user)
     } catch (error) {
         console.log(error)
         res.status(400).send(`something wrong ${error}`)
